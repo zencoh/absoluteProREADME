@@ -79,9 +79,45 @@ function renderLicenseSection(license) {
 }
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
+function generateMarkdown(answers) {
+  const licenseBadge = getrenderLicenseBadge(answers.license);
+  const licenseLink = getrenderLicenseLink(answers.license);
+  const licenseSection = getrenderLicenseSection(answers.license);
+  return `
+# ${answers.title}
 
+## Table of Contents
+* [License](#license)
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
+
+## License
+${licenseBadge}
+${licenseLink}
+${licenseSection}
+
+## Description
+${answers.description}
+
+## Installation
+${answers.instal}
+
+## Usage
+${answers.usage}
+
+## Contributing
+${answers.contributing}
+
+## Tests
+${answers.test}
+
+## Questions
+For any questions, please feel free to reach out to me on GitHub at [${answers.username}](https://github.com/${answers.username}). You can also reach me at ${answers.email}.
 `;
 }
 
