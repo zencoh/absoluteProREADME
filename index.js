@@ -1,6 +1,8 @@
 // TODO: Include packages needed for this application
+// To connect the generateMarkdown.js can I make it requrire the file?
 const inquirer = require('inquirer');
 const fs = require('fs');
+// const generateMarkdown = require('./utils/generateMarkdown');
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -55,6 +57,7 @@ inquirer.prompt(questions).then(answers => {
 });
 
 // TODO: Create a function to write README file
+// is the fileName supposed to be README.md, and the data is title, description, instal, usage, contributing, test, license, username, email?
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
         if (err) return console.log(err);
@@ -63,6 +66,7 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
+// I thought to initialize the app we would just run node index.js?
 function init() {}
 
 // Function call to initialize app
