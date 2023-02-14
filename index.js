@@ -1,9 +1,9 @@
 // TODO: Include packages needed for this application
-// To connect the generateMarkdown.js can I make it requrire the file?
+// require generateMarkdown because that is where the readme outline is
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
-// TODO: Create an array of questions for user input
+// array of questions for user input
 const questions = [
     {
         type: 'input',
@@ -52,13 +52,13 @@ const questions = [
         message: 'What is your Email?'
     }
 ];
+// inquirer prompt to make ask the user questions and what the user inputs is saved as answers
 inquirer.prompt(questions).then(answers => {
     const { title, description, instal, usage, contributing, test, license, username, email } = answers;
     writeToFile("README.md", generateMarkdown(answers));
 });
 
-// TODO: Create a function to write README file
-// is the fileName supposed to be README.md, and the data is title, description, instal, usage, contributing, test, license, username, email?
+// function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
         if (err) return console.log(err);
@@ -67,7 +67,7 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+// function init() {}
 
 // Function call to initialize app
-init();
+// init();
