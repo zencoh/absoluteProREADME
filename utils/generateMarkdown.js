@@ -78,7 +78,6 @@ function renderLicenseSection(license) {
   if (!licenseLink) {
     return '';
   };
-  // is there an easier way to list each license text rather than copy and paste each licensing statement? http://choosealicense.com
   return `This project is licensed under ${license}.`
 }
 
