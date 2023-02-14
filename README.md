@@ -23,6 +23,7 @@ Once you answer the prompts and the README.md file is created then you simply ne
 
 ## Usage
 Usage is simple for this project. In the terminal just 'cd' into the absoluteProREADME directory then type 'node index.js' to start the prompts.
+Watch a video example [here](./video/exampleTest.webm)
 
 ## Contributing
 Thank you for investing your time in reading through my code and README. Since I am creating this application for a coding bootcamp I am not taking contributions at this time.

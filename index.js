@@ -55,7 +55,7 @@ const questions = [
 // inquirer prompt to make ask the user questions and what the user inputs is saved as answers
 inquirer.prompt(questions).then(answers => {
     const { title, description, instal, usage, contributing, test, license, username, email } = answers;
-    writeToFile("README.md", generateMarkdown(answers));
+    writeToFile("test.md", generateMarkdown(answers));
 });
 
 // function to write README file
