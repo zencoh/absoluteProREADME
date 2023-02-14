@@ -2,7 +2,7 @@
 // To connect the generateMarkdown.js can I make it requrire the file?
 const inquirer = require('inquirer');
 const fs = require('fs');
-// const generateMarkdown = require('./utils/generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown');
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -36,7 +36,7 @@ const questions = [
         message: 'Give testing instuctions'
     },
     {
-        type: 'checkbox',
+        type: 'list',
         name: 'license',
         message: 'Choose a license',
         choices: ['None', 'Apache License 2.0', 'GNU General Public License v3.0', 'MIT License', 'BSD 2-Clause "Simplified" License', 'BSD 3-Clause "New" or "Revised" License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0', 'GNU Affero General Public License v3.0', 'GNU General Public License v2.0', 'GNU Lesser General Public License v3', 'Mozilla Public License 2.0', 'The Unlicense']
@@ -54,6 +54,7 @@ const questions = [
 ];
 inquirer.prompt(questions).then(answers => {
     const { title, description, instal, usage, contributing, test, license, username, email } = answers;
+    writeToFile("README.md", generateMarkdown(answers));
 });
 
 // TODO: Create a function to write README file
@@ -66,7 +67,6 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-// I thought to initialize the app we would just run node index.js?
 function init() {}
 
 // Function call to initialize app

@@ -71,19 +71,23 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  const licenseLink = renderLicenseSection(license);
+  if (license === 'None') {
+    return '';
+  };
+  const licenseLink = renderLicenseLink(license);
   if (!licenseLink) {
     return '';
-  }
+  };
   // is there an easier way to list each license text rather than copy and paste each licensing statement? http://choosealicense.com
-  return 'This project is licensed under ${license}. <fill here>'
+  return `This project is licensed under ${license}.`
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(answers) {
-  const licenseBadge = getrenderLicenseBadge(answers.license);
-  const licenseLink = getrenderLicenseLink(answers.license);
-  const licenseSection = getrenderLicenseSection(answers.license);
+  const licenseBadge = renderLicenseBadge(answers.license);
+  const licenseLink = renderLicenseLink(answers.license);
+  const licenseSection = renderLicenseSection(answers.license);
+  console.log(answers);
   return `
 # ${answers.title}
 
