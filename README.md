@@ -32,4 +32,4 @@ Thank you for investing your time in reading through my code and README. Since I
 If there is a README.md file created then Pass. If there is not a README.md file created then Fail.
 
 ## Questions
-For any questions, please feel free to reach out to me on GitHub at [zencoh](https://github.com/zencoh). You can also reach me at chsoccer4@outlook.com.
+For any questions, please feel free to reach out to me on GitHub at [zencoh](https://github.com/zencoh). You can also reach me at chartkopp@outlook.com.
